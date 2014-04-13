@@ -9492,7 +9492,7 @@ sub HTMLShowEmailSendersChart {
 "<th rowspan=\"2\" bgcolor=\"#$color_k\" width=\"80\">$Message[106]</th>";
 	}
 	if ( $ShowEMailSenders =~ /L/i ) {
-		print "<th rowspan=\"2\" width=\"120\">$Message[9]</th>";
+		print "<th rowspan=\"2\" width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	print
@@ -9659,7 +9659,7 @@ sub HTMLShowEmailReceiversChart {
 "<th rowspan=\"2\" bgcolor=\"#$color_k\" width=\"80\">$Message[106]</th>";
 	}
 	if ( $ShowEMailReceivers =~ /L/i ) {
-		print "<th rowspan=\"2\" width=\"120\">$Message[9]</th>";
+		print "<th rowspan=\"2\" width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	print
@@ -9909,6 +9909,16 @@ sub HTMLTopBanner{
 "<tr><td class=\"aws\" valign=\"middle\"><b>$Message[133]:</b></td>";
 		print "<td class=\"aws\" valign=\"middle\">";
 		if ( $ENV{'GATEWAY_INTERFACE'} || !$StaticLinks ) {
+			print "<select class=\"aws_formfield\" name=\"year\">\n";
+
+			# Add YearRequired in list if not in ListOfYears
+			$ListOfYears{$YearRequired} ||= $MonthRequired;
+			foreach ( sort keys %ListOfYears ) {
+				print "<option"
+				  . ( $YearRequired eq "$_" ? " selected=\"selected\"" : "" )
+				  . " value=\"$_\">$_</option>\n";
+			}
+			print "</select>\n";
 			print "<select class=\"aws_formfield\" name=\"month\">\n";
 			foreach ( 1 .. 12 ) {
 				my $monthix = sprintf( "%02s", $_ );
@@ -9924,16 +9934,6 @@ sub HTMLTopBanner{
 				print "<option"
 				  . ( $MonthRequired eq 'all' ? " selected=\"selected\"" : "" )
 				  . " value=\"all\">- $Message[6] -</option>\n";
-			}
-			print "</select>\n";
-			print "<select class=\"aws_formfield\" name=\"year\">\n";
-
-			# Add YearRequired in list if not in ListOfYears
-			$ListOfYears{$YearRequired} ||= $MonthRequired;
-			foreach ( sort keys %ListOfYears ) {
-				print "<option"
-				  . ( $YearRequired eq "$_" ? " selected=\"selected\"" : "" )
-				  . " value=\"$_\">$_</option>\n";
 			}
 			print "</select>\n";
 			print "<input type=\"hidden\" name=\"output\" value=\""
@@ -9966,11 +9966,10 @@ sub HTMLTopBanner{
 			print "<span style=\"font-size: 14px;\">";
 			if ($DayRequired) { print "$Message[4] $DayRequired - "; }
 			if ( $MonthRequired eq 'all' ) {
-				print "$Message[6] $YearRequired";
+				print "$YearRequired$Message[6]";
 			}
 			else {
-				print
-				  "$Message[5] $MonthNumLib{$MonthRequired} $YearRequired";
+				print "$YearRequired$Message[6] ".$MonthNumLib{$MonthRequired};
 			}
 			print "</span>";
 		}
@@ -11671,7 +11670,7 @@ sub HTMLShowExtraSections{
 "<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 			}
 			if ( $ExtraStatTypes[$extranum] =~ m/L/i ) {
-				print "<th width=\"120\">$Message[9]</th>";
+				print "<th width=\"150\">$Message[9]</th>";
 			}
 			print "</tr>\n";
 			$total_p = $total_h = $total_k = 0;
@@ -11834,7 +11833,7 @@ sub HTMLShowRobots{
 "<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ShowRobotsStats =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	$total_p = $total_h = $total_k = $total_r = 0;
@@ -12191,7 +12190,7 @@ sub HTMLShowLogins{
 "<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	$total_p = $total_h = $total_k = 0;
@@ -12298,7 +12297,7 @@ sub HTMLShowHostsUnknown{
 "<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ShowHostsStats =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	$total_p = $total_h = $total_k = 0;
@@ -12435,7 +12434,7 @@ sub HTMLShowHosts{
 "<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ShowHostsStats =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	$total_p = $total_h = $total_k = 0;
@@ -12838,10 +12837,7 @@ sub HTMLMainSummary{
 "<td class=\"aws\"><b>$Message[133]</b></td><td class=\"aws\" colspan=\""
 	  . ( $colspan - 1 ) . "\">\n";
 	print( $MonthRequired eq 'all'
-		? "$Message[6] $YearRequired"
-		: "$Message[5] "
-		  . $MonthNumLib{$MonthRequired}
-		  . " $YearRequired"
+		? "$YearRequired$Message[6]" : "$YearRequired$Message[6] $MonthNumLib{$MonthRequired}"
 	);
 	print "</td></tr>\n";
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\">";
@@ -13244,7 +13240,7 @@ sub HTMLMainMonthly{
 				? '<span class="currentday">'
 				: ''
 			  );
-			print "$MonthNumLib{$monthix}<br />$YearRequired";
+			print "$YearRequired$Message[6]<br />$MonthNumLib{$monthix}";
 			print(   !$StaticLinks
 				  && $monthix == $nowmonth
 				  && $YearRequired == $nowyear ? '</span>' : '' );
@@ -13307,7 +13303,7 @@ sub HTMLMainMonthly{
 				? '<span class="currentday">'
 				: ''
 			  );
-			print "$MonthNumLib{$monthix} $YearRequired";
+			print "$YearRequired$Message[6] $MonthNumLib{$monthix}";
 			print(   !$StaticLinks
 				  && $monthix == $nowmonth
 				  && $YearRequired == $nowyear ? '</span>' : '' );
@@ -14820,7 +14816,7 @@ sub HTMLMainHosts{
 		  . ">$Message[75]</th>";
 	}
 	if ( $ShowHostsStats =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = 0;
@@ -14926,7 +14922,7 @@ sub HTMLMainLogins{
 		  . ">$Message[75]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = 0;
@@ -15065,7 +15061,7 @@ sub HTMLMainRobots{
 		  "<th bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ShowRobotsStats =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = my $total_r = 0;
@@ -15160,7 +15156,7 @@ sub HTMLMainWorms{
 		  "<th bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ShowWormsStats =~ /L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = 0;
@@ -16726,7 +16722,7 @@ sub HTMLMainExtra{
 		  "<th bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th>";
 	}
 	if ( $ExtraStatTypes[$extranum] =~ m/L/i ) {
-		print "<th width=\"120\">$Message[9]</th>";
+		print "<th width=\"150\">$Message[9]</th>";
 	}
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = 0;
