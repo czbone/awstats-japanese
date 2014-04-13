@@ -1051,7 +1051,7 @@ sub tab_head {
 
 	if ( $width == 70 && $QueryString =~ /buildpdf/i ) {
 		print
-"<table class=\"aws_border sortable\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"900\">\n";
+"<table class=\"aws_border sortable\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"1000\">\n";
 	}
 	else {
 		print
@@ -9477,19 +9477,19 @@ sub HTMLShowEmailSendersChart {
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"3\">$Message[131] : "
 	  . ( scalar keys %_emails_h ) . "</th>";
 	if ( $ShowEMailSenders =~ /H/i ) {
-		print "<th rowspan=\"2\" bgcolor=\"#$color_h\" width=\"90\""
+		print "<th rowspan=\"2\" bgcolor=\"#$color_h\" width=\"100\""
 		  . Tooltip(4)
 		  . ">$Message[57]</th>";
 	}
 	if ( $ShowEMailSenders =~ /B/i ) {
 		print
-"<th class=\"datasize\" rowspan=\"2\" bgcolor=\"#$color_k\" width=\"90\""
+"<th class=\"datasize\" rowspan=\"2\" bgcolor=\"#$color_k\" width=\"100\""
 		  . Tooltip(5)
 		  . ">$Message[75]</th>";
 	}
 	if ( $ShowEMailSenders =~ /M/i ) {
 		print
-"<th rowspan=\"2\" bgcolor=\"#$color_k\" width=\"90\">$Message[106]</th>";
+"<th rowspan=\"2\" bgcolor=\"#$color_k\" width=\"100\">$Message[106]</th>";
 	}
 	if ( $ShowEMailSenders =~ /L/i ) {
 		print "<th rowspan=\"2\" width=\"150\">$Message[9]</th>";
@@ -9644,19 +9644,19 @@ sub HTMLShowEmailReceiversChart {
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"3\">$Message[132] : "
 	  . ( scalar keys %_emailr_h ) . "</th>";
 	if ( $ShowEMailReceivers =~ /H/i ) {
-		print "<th rowspan=\"2\" bgcolor=\"#$color_h\" width=\"90\""
+		print "<th rowspan=\"2\" bgcolor=\"#$color_h\" width=\"100\""
 		  . Tooltip(4)
 		  . ">$Message[57]</th>";
 	}
 	if ( $ShowEMailReceivers =~ /B/i ) {
 		print
-"<th class=\"datasize\" rowspan=\"2\" bgcolor=\"#$color_k\" width=\"90\""
+"<th class=\"datasize\" rowspan=\"2\" bgcolor=\"#$color_k\" width=\"100\""
 		  . Tooltip(5)
 		  . ">$Message[75]</th>";
 	}
 	if ( $ShowEMailReceivers =~ /M/i ) {
 		print
-"<th rowspan=\"2\" bgcolor=\"#$color_k\" width=\"90\">$Message[106]</th>";
+"<th rowspan=\"2\" bgcolor=\"#$color_k\" width=\"100\">$Message[106]</th>";
 	}
 	if ( $ShowEMailReceivers =~ /L/i ) {
 		print "<th rowspan=\"2\" width=\"150\">$Message[9]</th>";
@@ -10526,14 +10526,14 @@ sub HTMLMainFileType{
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"3\">$Message[73]</th>";
 
 	if ( $ShowFileTypesStats =~ /H/i ) {
-		print "<th bgcolor=\"#$color_h\" width=\"90\""
+		print "<th bgcolor=\"#$color_h\" width=\"100\""
 		  . Tooltip(4)
-		  . ">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+		  . ">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	}
 	if ( $ShowFileTypesStats =~ /B/i ) {
-		print "<th bgcolor=\"#$color_k\" width=\"90\""
+		print "<th bgcolor=\"#$color_k\" width=\"100\""
 		  . Tooltip(5)
-		  . ">$Message[75]</th><th bgcolor=\"#$color_k\" width=\"90\">$Message[15]</th>";
+		  . ">$Message[75]</th><th bgcolor=\"#$color_k\" width=\"100\">$Message[15]</th>";
 	}
 	if ( $ShowFileTypesStats =~ /C/i ) {
 		print
@@ -10652,9 +10652,9 @@ sub HTMLShowBrowserDetail{
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[58]</th>";
 	print
-"<th width=\"90\">$Message[111]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th width=\"100\">$Message[111]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	print "<th>&nbsp;</th>";
 	print "</tr>\n";
 	my $total_h = 0;
@@ -10838,7 +10838,7 @@ sub HTMLShowBrowserDetail{
 			  . ( $count ? "" : " width=\"$WIDTHCOLICON\"" )
 			  . "><img src=\"$DirIcons\/browser\/unknown.png\""
 			  . AltTitle("")
-			  . " /></td><td class=\"aws\"><span style=\"color: #$color_other\">$Message[0]</span></td><td width=\"90\">?</td>";
+			  . " /></td><td class=\"aws\"><span style=\"color: #$color_other\">$Message[0]</span></td><td width=\"100\">?</td>";
 		}
 		else {
 			my $keywithoutcumul = $key;
@@ -10957,9 +10957,9 @@ sub HTMLShowOSDetail{
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[58]</th>";
 	print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	print "</tr>\n";
 	my $total_h = 0;
 	my $total_p = 0;
@@ -11239,9 +11239,9 @@ sub HTMLShowReferers{
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>".Format_Number($TotalDifferentSearchEngines)." $Message[122]</th>";
 	print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	print "</tr>\n";
 	my $total_s = 0;
 	my $total_p = 0;
@@ -11376,9 +11376,9 @@ sub HTMLShowRefererPages{
 	else { print "$Message[102]: ".Format_Number($cpt)." $Message[28]"; }
 	print "</th>";
 	print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	print "</tr>\n";
 	my $total_s = 0;
 	my $count = 0;
@@ -11478,7 +11478,7 @@ sub HTMLShowKeyPhrases{
 	&tab_head( $title, 19, 0, 'keyphrases' );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 	  . Tooltip(15)
-	  . "><th>".Format_Number($TotalDifferentKeyphrases)." $Message[103]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[15]</th></tr>\n";
+	  . "><th>".Format_Number($TotalDifferentKeyphrases)." $Message[103]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[15]</th></tr>\n";
 	my $total_s = 0;
 	my $count = 0;
 	&BuildKeyList(
@@ -11546,7 +11546,7 @@ sub HTMLShowKeywords{
 	&tab_head( $title, 19, 0, 'keywords' );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 	  . Tooltip(15)
-	  . "><th>".Format_Number($TotalDifferentKeywords)." $Message[13]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[15]</th></tr>\n";
+	  . "><th>".Format_Number($TotalDifferentKeywords)." $Message[13]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[15]</th></tr>\n";
 	my $total_s = 0;
 	my $count = 0;
 	&BuildKeyList( $MaxRowsInHTMLOutput, $MinHit{'Keyword'},
@@ -11659,15 +11659,15 @@ sub HTMLShowExtraSections{
 
 			if ( $ExtraStatTypes[$extranum] =~ m/P/i ) {
 				print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th>";
 			}
 			if ( $ExtraStatTypes[$extranum] =~ m/H/i ) {
 				print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 			}
 			if ( $ExtraStatTypes[$extranum] =~ m/B/i ) {
 				print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 			}
 			if ( $ExtraStatTypes[$extranum] =~ m/L/i ) {
 				print "<th width=\"150\">$Message[9]</th>";
@@ -11826,11 +11826,11 @@ sub HTMLShowRobots{
 	  . " $Message[51]</th>";
 	if ( $ShowRobotsStats =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowRobotsStats =~ /B/i ) {
 		print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ShowRobotsStats =~ /L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -11974,19 +11974,19 @@ sub HTMLShowURLDetail{
 	print "</th>";
 	if ( $ShowPagesStats =~ /P/i ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[29]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[29]</th>";
 	}
 	if ( $ShowPagesStats =~ /B/i ) {
 		print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[106]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[106]</th>";
 	}
 	if ( $ShowPagesStats =~ /E/i ) {
 		print
-		  "<th bgcolor=\"#$color_e\" width=\"90\">$Message[104]</th>";
+		  "<th bgcolor=\"#$color_e\" width=\"100\">$Message[104]</th>";
 	}
 	if ( $ShowPagesStats =~ /X/i ) {
 		print
-		  "<th bgcolor=\"#$color_x\" width=\"90\">$Message[116]</th>";
+		  "<th bgcolor=\"#$color_x\" width=\"100\">$Message[116]</th>";
 	}
 
 	# Call to plugins' function ShowPagesAddField
@@ -12179,15 +12179,15 @@ sub HTMLShowLogins{
 	&HTMLShowUserInfo('__title__');
 	if ( $ShowAuthenticatedUsers =~ /P/i ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /B/i ) {
 		print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -12286,15 +12286,15 @@ sub HTMLShowHostsUnknown{
 	&HTMLShowHostInfo('__title__');
 	if ( $ShowHostsStats =~ /P/i ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th>";
 	}
 	if ( $ShowHostsStats =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowHostsStats =~ /B/i ) {
 		print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ShowHostsStats =~ /L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -12423,15 +12423,15 @@ sub HTMLShowHosts{
 	&HTMLShowHostInfo('__title__');
 	if ( $ShowHostsStats =~ /P/i ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th>";
 	}
 	if ( $ShowHostsStats =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowHostsStats =~ /B/i ) {
 		print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ShowHostsStats =~ /L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -12539,23 +12539,23 @@ sub HTMLShowDomains{
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th width=\"$WIDTHCOLICON\">&nbsp;</th><th colspan=\"2\">$Message[17]</th>";
 	if ( $ShowDomainsStats =~ /U/i ) {
 		print
-		  "<th bgcolor=\"#$color_u\" width=\"90\">$Message[11]</th>";
+		  "<th bgcolor=\"#$color_u\" width=\"100\">$Message[11]</th>";
 	}
 	if ( $ShowDomainsStats =~ /V/i ) {
 		print
-		  "<th bgcolor=\"#$color_v\" width=\"90\">$Message[10]</th>";
+		  "<th bgcolor=\"#$color_v\" width=\"100\">$Message[10]</th>";
 	}
 	if ( $ShowDomainsStats =~ /P/i ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th>";
 	}
 	if ( $ShowDomainsStats =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowDomainsStats =~ /B/i ) {
 		print
-"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+"<th class=\"datasize\" bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	print "<th>&nbsp;</th>";
 	print "</tr>\n";
@@ -12709,11 +12709,11 @@ sub HTMLShowDownloads{
 	print "$Center<a name=\"downloads\">&nbsp;</a><br />\n";
 	&tab_head( $Message[178], 19, 0, "downloads" );
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[178]</th>";
-	if ( $ShowFileTypesStats =~ /H/i ){print "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>"
-		."<th bgcolor=\"#$color_h\" width=\"90\">206 $Message[57]</th>"; }
+	if ( $ShowFileTypesStats =~ /H/i ){print "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>"
+		."<th bgcolor=\"#$color_h\" width=\"100\">206 $Message[57]</th>"; }
 	if ( $ShowFileTypesStats =~ /B/i ){
-		print "<th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
-		print "<th bgcolor=\"#$color_k\" width=\"90\">$Message[106]</th>";
+		print "<th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
+		print "<th bgcolor=\"#$color_k\" width=\"100\">$Message[106]</th>";
 	}
 	print "</tr>\n";
 	my $count = 0;
@@ -13265,29 +13265,29 @@ sub HTMLMainMonthly{
 	if ($AddDataArrayMonthStats) {
 		print "<table>\n";
 		print
-"<tr><td width=\"90\" bgcolor=\"#$color_TableBGRowTitle\">$Message[5]</td>";
+"<tr><td width=\"100\" bgcolor=\"#$color_TableBGRowTitle\">$Message[5]</td>";
 		if ( $ShowMonthStats =~ /U/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_u\""
+			print "<td width=\"100\" bgcolor=\"#$color_u\""
 			  . Tooltip(2)
 			  . ">$Message[11]</td>";
 		}
 		if ( $ShowMonthStats =~ /V/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_v\""
+			print "<td width=\"100\" bgcolor=\"#$color_v\""
 			  . Tooltip(1)
 			  . ">$Message[10]</td>";
 		}
 		if ( $ShowMonthStats =~ /P/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_p\""
+			print "<td width=\"100\" bgcolor=\"#$color_p\""
 			  . Tooltip(3)
 			  . ">$Message[56]</td>";
 		}
 		if ( $ShowMonthStats =~ /H/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_h\""
+			print "<td width=\"100\" bgcolor=\"#$color_h\""
 			  . Tooltip(4)
 			  . ">$Message[57]</td>";
 		}
 		if ( $ShowMonthStats =~ /B/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_k\""
+			print "<td width=\"100\" bgcolor=\"#$color_k\""
 			  . Tooltip(5)
 			  . ">$Message[75]</td>";
 		}
@@ -13692,24 +13692,24 @@ sub HTMLMainDaily{
 	if ($AddDataArrayShowDaysOfMonthStats) {
 		print "<table>\n";
 		print
-"<tr><td width=\"90\" bgcolor=\"#$color_TableBGRowTitle\">$Message[4]</td>";
+"<tr><td width=\"100\" bgcolor=\"#$color_TableBGRowTitle\">$Message[4]</td>";
 		if ( $ShowDaysOfMonthStats =~ /V/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_v\""
+			print "<td width=\"100\" bgcolor=\"#$color_v\""
 			  . Tooltip(1)
 			  . ">$Message[10]</td>";
 		}
 		if ( $ShowDaysOfMonthStats =~ /P/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_p\""
+			print "<td width=\"100\" bgcolor=\"#$color_p\""
 			  . Tooltip(3)
 			  . ">$Message[56]</td>";
 		}
 		if ( $ShowDaysOfMonthStats =~ /H/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_h\""
+			print "<td width=\"100\" bgcolor=\"#$color_h\""
 			  . Tooltip(4)
 			  . ">$Message[57]</td>";
 		}
 		if ( $ShowDaysOfMonthStats =~ /B/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_k\""
+			print "<td width=\"100\" bgcolor=\"#$color_k\""
 			  . Tooltip(5)
 			  . ">$Message[75]</td>";
 		}
@@ -14062,19 +14062,19 @@ sub HTMLMainDaysofWeek{
 			if ($AddDataArrayShowDaysOfWeekStats) {
 				print "<table>\n";
 				print
-"<tr><td width=\"90\" bgcolor=\"#$color_TableBGRowTitle\">$Message[4]</td>";
+"<tr><td width=\"100\" bgcolor=\"#$color_TableBGRowTitle\">$Message[4]</td>";
 				if ( $ShowDaysOfWeekStats =~ /P/i ) {
-					print "<td width=\"90\" bgcolor=\"#$color_p\""
+					print "<td width=\"100\" bgcolor=\"#$color_p\""
 					  . Tooltip(3)
 					  . ">$Message[56]</td>";
 				}
 				if ( $ShowDaysOfWeekStats =~ /H/i ) {
-					print "<td width=\"90\" bgcolor=\"#$color_h\""
+					print "<td width=\"100\" bgcolor=\"#$color_h\""
 					  . Tooltip(4)
 					  . ">$Message[57]</td>";
 				}
 				if ( $ShowDaysOfWeekStats =~ /B/i ) {
-					print "<td width=\"90\" bgcolor=\"#$color_k\""
+					print "<td width=\"100\" bgcolor=\"#$color_k\""
 					  . Tooltip(5)
 					  . ">$Message[75]</td></tr>";
 				}
@@ -14191,11 +14191,11 @@ sub HTMLMainDownloads{
 	
 	my $total_dls = scalar keys %_downloads;
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[178]: $total_dls</th>";
-	if ( $ShowDownloadsStats =~ /H/i ){print "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>"
-		."<th bgcolor=\"#$color_h\" width=\"90\">206 $Message[57]</th>"; }
+	if ( $ShowDownloadsStats =~ /H/i ){print "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>"
+		."<th bgcolor=\"#$color_h\" width=\"100\">206 $Message[57]</th>"; }
 	if ( $ShowDownloadsStats =~ /B/i ){
-		print "<th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
-		print "<th bgcolor=\"#$color_k\" width=\"90\">$Message[106]</th>"; 
+		print "<th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
+		print "<th bgcolor=\"#$color_k\" width=\"100\">$Message[106]</th>"; 
 	}
 	print "</tr>\n";
 	my $count   = 0;
@@ -14379,19 +14379,19 @@ sub HTMLMainHours{
 
 		print "<table>\n";
 		print
-"<tr><td width=\"90\" bgcolor=\"#$color_TableBGRowTitle\">$Message[20]</td>";
+"<tr><td width=\"100\" bgcolor=\"#$color_TableBGRowTitle\">$Message[20]</td>";
 		if ( $ShowHoursStats =~ /P/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_p\""
+			print "<td width=\"100\" bgcolor=\"#$color_p\""
 			  . Tooltip(3)
 			  . ">$Message[56]</td>";
 		}
 		if ( $ShowHoursStats =~ /H/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_h\""
+			print "<td width=\"100\" bgcolor=\"#$color_h\""
 			  . Tooltip(4)
 			  . ">$Message[57]</td>";
 		}
 		if ( $ShowHoursStats =~ /B/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_k\""
+			print "<td width=\"100\" bgcolor=\"#$color_k\""
 			  . Tooltip(5)
 			  . ">$Message[75]</td>";
 		}
@@ -14424,19 +14424,19 @@ sub HTMLMainHours{
 
 		print "<table>\n";
 		print
-"<tr><td width=\"90\" bgcolor=\"#$color_TableBGRowTitle\">$Message[20]</td>";
+"<tr><td width=\"100\" bgcolor=\"#$color_TableBGRowTitle\">$Message[20]</td>";
 		if ( $ShowHoursStats =~ /P/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_p\""
+			print "<td width=\"100\" bgcolor=\"#$color_p\""
 			  . Tooltip(3)
 			  . ">$Message[56]</td>";
 		}
 		if ( $ShowHoursStats =~ /H/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_h\""
+			print "<td width=\"100\" bgcolor=\"#$color_h\""
 			  . Tooltip(4)
 			  . ">$Message[57]</td>";
 		}
 		if ( $ShowHoursStats =~ /B/i ) {
-			print "<td width=\"90\" bgcolor=\"#$color_k\""
+			print "<td width=\"100\" bgcolor=\"#$color_k\""
 			  . Tooltip(5)
 			  . ">$Message[75]</td>";
 		}
@@ -14555,27 +14555,27 @@ sub HTMLMainCountries{
 	## pages and total hits, and total visits and total unique
 	## by Josep Ruano @ CAPSiDE
 	if ( $ShowDomainsStats =~ /U/i ) {
-		print "<th bgcolor=\"#$color_u\" width=\"90\""
+		print "<th bgcolor=\"#$color_u\" width=\"100\""
 		  . Tooltip(2)
 		  . ">$Message[11]</th>";
 	}
 	if ( $ShowDomainsStats =~ /V/i ) {
-		print "<th bgcolor=\"#$color_v\" width=\"90\""
+		print "<th bgcolor=\"#$color_v\" width=\"100\""
 		  . Tooltip(1)
 		  . ">$Message[10]</th>";
 	}
 	if ( $ShowDomainsStats =~ /P/i ) {
-		print "<th bgcolor=\"#$color_p\" width=\"90\""
+		print "<th bgcolor=\"#$color_p\" width=\"100\""
 		  . Tooltip(3)
 		  . ">$Message[56]</th>";
 	}
 	if ( $ShowDomainsStats =~ /H/i ) {
-		print "<th bgcolor=\"#$color_h\" width=\"90\""
+		print "<th bgcolor=\"#$color_h\" width=\"100\""
 		  . Tooltip(4)
 		  . ">$Message[57]</th>";
 	}
 	if ( $ShowDomainsStats =~ /B/i ) {
-		print "<th bgcolor=\"#$color_k\" width=\"90\""
+		print "<th bgcolor=\"#$color_k\" width=\"100\""
 		  . Tooltip(5)
 		  . ">$Message[75]</th>";
 	}
@@ -14801,17 +14801,17 @@ sub HTMLMainHosts{
 	}
 	&HTMLShowHostInfo('__title__');
 	if ( $ShowHostsStats =~ /P/i ) {
-		print "<th bgcolor=\"#$color_p\" width=\"90\""
+		print "<th bgcolor=\"#$color_p\" width=\"100\""
 		  . Tooltip(3)
 		  . ">$Message[56]</th>";
 	}
 	if ( $ShowHostsStats =~ /H/i ) {
-		print "<th bgcolor=\"#$color_h\" width=\"90\""
+		print "<th bgcolor=\"#$color_h\" width=\"100\""
 		  . Tooltip(4)
 		  . ">$Message[57]</th>";
 	}
 	if ( $ShowHostsStats =~ /B/i ) {
-		print "<th bgcolor=\"#$color_k\" width=\"90\""
+		print "<th bgcolor=\"#$color_k\" width=\"100\""
 		  . Tooltip(5)
 		  . ">$Message[75]</th>";
 	}
@@ -14907,17 +14907,17 @@ sub HTMLMainLogins{
 	  . Format_Number(( scalar keys %_login_h )) . "</th>";
 	&HTMLShowUserInfo('__title__');
 	if ( $ShowAuthenticatedUsers =~ /P/i ) {
-		print "<th bgcolor=\"#$color_p\" width=\"90\""
+		print "<th bgcolor=\"#$color_p\" width=\"100\""
 		  . Tooltip(3)
 		  . ">$Message[56]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /H/i ) {
-		print "<th bgcolor=\"#$color_h\" width=\"90\""
+		print "<th bgcolor=\"#$color_h\" width=\"100\""
 		  . Tooltip(4)
 		  . ">$Message[57]</th>";
 	}
 	if ( $ShowAuthenticatedUsers =~ /B/i ) {
-		print "<th bgcolor=\"#$color_k\" width=\"90\""
+		print "<th bgcolor=\"#$color_k\" width=\"100\""
 		  . Tooltip(5)
 		  . ">$Message[75]</th>";
 	}
@@ -15054,11 +15054,11 @@ sub HTMLMainRobots{
 	  . " $Message[51]*</th>";
 	if ( $ShowRobotsStats =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowRobotsStats =~ /B/i ) {
 		print
-		  "<th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+		  "<th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ShowRobotsStats =~ /L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -15149,11 +15149,11 @@ sub HTMLMainWorms{
 	print "<th>$Message[167]</th>";
 	if ( $ShowWormsStats =~ /H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowWormsStats =~ /B/i ) {
 		print
-		  "<th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+		  "<th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ShowWormsStats =~ /L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -15246,7 +15246,7 @@ sub HTMLMainSessions{
 	else { $average_s = '?'; }
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 	  . Tooltip(1)
-	  . "><th>$Message[10]: ".Format_Number($TotalVisits)." - $Message[96]: ".Format_Number($average_s)." s</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[10]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[15]</th></tr>\n";
+	  . "><th>$Message[10]: ".Format_Number($TotalVisits)." - $Message[96]: ".Format_Number($average_s)." s</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[10]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[15]</th></tr>\n";
 	$average_s = 0;
 	my $total_s   = 0;
 	my $count = 0;
@@ -15344,23 +15344,23 @@ sub HTMLMainPages{
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>".Format_Number($TotalDifferentPages)." $Message[28]</th>";
 	if ( $ShowPagesStats =~ /P/i && $LogType ne 'F' ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[29]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[29]</th>";
 	}
 	if ( $ShowPagesStats =~ /[PH]/i && $LogType eq 'F' ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ShowPagesStats =~ /B/i ) {
 		print
-		  "<th bgcolor=\"#$color_k\" width=\"90\">$Message[106]</th>";
+		  "<th bgcolor=\"#$color_k\" width=\"100\">$Message[106]</th>";
 	}
 	if ( $ShowPagesStats =~ /E/i ) {
 		print
-		  "<th bgcolor=\"#$color_e\" width=\"90\">$Message[104]</th>";
+		  "<th bgcolor=\"#$color_e\" width=\"100\">$Message[104]</th>";
 	}
 	if ( $ShowPagesStats =~ /X/i ) {
 		print
-		  "<th bgcolor=\"#$color_x\" width=\"90\">$Message[116]</th>";
+		  "<th bgcolor=\"#$color_x\" width=\"100\">$Message[116]</th>";
 	}
 
 	# Call to plugins' function ShowPagesAddField
@@ -15637,9 +15637,9 @@ sub HTMLMainOS{
 	print
 "<tr bgcolor=\"#$color_TableBGRowTitle\"><th width=\"$WIDTHCOLICON\">&nbsp;</th><th>$Message[59]</th>";
 	print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th></tr>\n";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th></tr>\n";
 	my $total_h = 0;
 	my $total_p = 0;
 	my $count = 0;
@@ -15805,7 +15805,7 @@ sub HTMLMainBrowsers{
 		}
 	}
 	print
-"<tr bgcolor=\"#$color_TableBGRowTitle\"><th width=\"$WIDTHCOLICON\">&nbsp;</th><th>$Message[21]</th><th width=\"90\">$Message[111]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th></tr>\n";
+"<tr bgcolor=\"#$color_TableBGRowTitle\"><th width=\"$WIDTHCOLICON\">&nbsp;</th><th>$Message[21]</th><th width=\"100\">$Message[111]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th></tr>\n";
 	my $total_h = 0;
 	my $total_p = 0;
 	my $count = 0;
@@ -15825,7 +15825,7 @@ sub HTMLMainBrowsers{
 			  . ( $count ? "" : " width=\"$WIDTHCOLICON\"" )
 			  . "><img src=\"$DirIcons\/browser\/unknown.png\""
 			  . AltTitle("")
-			  . " /></td><td class=\"aws\"><span style=\"color: #$color_other\">$Message[0]</span></td><td width=\"90\">?</td>"
+			  . " /></td><td class=\"aws\"><span style=\"color: #$color_other\">$Message[0]</span></td><td width=\"100\">?</td>"
 			  . "<td>".Format_Number($_browser_p{$key})."</td><td>$p_p</td>"
 			  . "<td>".Format_Number($_browser_h{$key})."</td><td>$p_h</td></tr>\n";
 		}
@@ -15894,7 +15894,7 @@ sub HTMLMainScreenSize{
 	  "$Message[135] ($Message[77] $MaxNbOf{'ScreenSizesShown'})";
 	&tab_head( "$title", 0, 0, 'screensizes' );
 	print
-"<tr bgcolor=\"#$color_TableBGRowTitle\"><th>$Message[135]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th></tr>\n";
+"<tr bgcolor=\"#$color_TableBGRowTitle\"><th>$Message[135]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th></tr>\n";
 	my $total_h = 0;
 	my $count   = 0;
 	&BuildKeyList( $MaxNbOf{'ScreenSizesShown'},
@@ -15995,11 +15995,11 @@ sub HTMLMainReferrers{
 	  "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>$Message[37]</th>";
 	if ( $ShowOriginStats =~ /P/i ) {
 		print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	}
 	if ( $ShowOriginStats =~ /H/i ) {
 		print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	}
 	print "</tr>\n";
 
@@ -16255,7 +16255,7 @@ sub HTMLMainKeys{
 		);
 		print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 		  . Tooltip(15)
-		  . "><th>$TotalDifferentKeyphrases $Message[103]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[15]</th></tr>\n";
+		  . "><th>$TotalDifferentKeyphrases $Message[103]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[15]</th></tr>\n";
 		my $total_s = 0;
 		my $count = 0;
 		&BuildKeyList( $MaxNbOf{'KeyphrasesShown'},
@@ -16326,7 +16326,7 @@ sub HTMLMainKeys{
 		);
 		print "<tr bgcolor=\"#$color_TableBGRowTitle\""
 		  . Tooltip(15)
-		  . "><th>$TotalDifferentKeywords $Message[13]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"90\">$Message[15]</th></tr>\n";
+		  . "><th>$TotalDifferentKeywords $Message[13]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[14]</th><th bgcolor=\"#$color_s\" width=\"100\">$Message[15]</th></tr>\n";
 		my $total_s = 0;
 		my $count = 0;
 		&BuildKeyList( $MaxNbOf{'KeywordsShown'},
@@ -16498,7 +16498,7 @@ sub HTMLMainHTTPStatus{
 	}
 	
 	print
-"<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[32]*</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th><th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th></tr>\n";
+"<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[32]*</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th><th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th></tr>\n";
 	my $total_h = 0;
 	my $count = 0;
 	foreach my $key (@keylist) {
@@ -16543,7 +16543,7 @@ sub HTMLMainSMTPStatus{
 	my $title = "$Message[147]";
 	&tab_head( "$title", 19, 0, 'errors' );
 	print
-"<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[147]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th><th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th></tr>\n";
+"<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[147]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th><th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th></tr>\n";
 	my $total_h = 0;
 	my $count = 0;
 	&BuildKeyList( $MaxRowsInHTMLOutput, 1, \%_errors_h, \%_errors_h );
@@ -16624,15 +16624,15 @@ sub HTMLMainCluster{
 	&HTMLShowClusterInfo('__title__');
 	if ( $ShowClusterStats =~ /P/i ) {
 		print
-"<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"100\">$Message[15]</th>";
 	}
 	if ( $ShowClusterStats =~ /H/i ) {
 		print
-"<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"100\">$Message[15]</th>";
 	}
 	if ( $ShowClusterStats =~ /B/i ) {
 		print
-"<th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th><th bgcolor=\"#$color_k\" width=\"90\">$Message[15]</th>";
+"<th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th><th bgcolor=\"#$color_k\" width=\"100\">$Message[15]</th>";
 	}
 	print "</tr>\n";
 	my $total_p = my $total_h = my $total_k = 0;
@@ -16711,15 +16711,15 @@ sub HTMLMainExtra{
 
 	if ( $ExtraStatTypes[$extranum] =~ m/P/i ) {
 		print
-		  "<th bgcolor=\"#$color_p\" width=\"90\">$Message[56]</th>";
+		  "<th bgcolor=\"#$color_p\" width=\"100\">$Message[56]</th>";
 	}
 	if ( $ExtraStatTypes[$extranum] =~ m/H/i ) {
 		print
-		  "<th bgcolor=\"#$color_h\" width=\"90\">$Message[57]</th>";
+		  "<th bgcolor=\"#$color_h\" width=\"100\">$Message[57]</th>";
 	}
 	if ( $ExtraStatTypes[$extranum] =~ m/B/i ) {
 		print
-		  "<th bgcolor=\"#$color_k\" width=\"90\">$Message[75]</th>";
+		  "<th bgcolor=\"#$color_k\" width=\"100\">$Message[75]</th>";
 	}
 	if ( $ExtraStatTypes[$extranum] =~ m/L/i ) {
 		print "<th width=\"150\">$Message[9]</th>";
@@ -20806,10 +20806,10 @@ if ( scalar keys %HTMLOutput ) {
 	{
 		# to add unique visitors & number of visits, by J Ruano @ CAPSiDE
 		if ( $ShowDomainsStats =~ /U/i ) {
-			print "<th bgcolor=\"#$color_u\" width=\"90\">$Message[11]</th>";
+			print "<th bgcolor=\"#$color_u\" width=\"100\">$Message[11]</th>";
 		}
 		if ( $ShowDomainsStats =~ /V/i ) {
-			print "<th bgcolor=\"#$color_v\" width=\"90\">$Message[10]</th>";
+			print "<th bgcolor=\"#$color_v\" width=\"100\">$Message[10]</th>";
 		}
 
 		my $function = "AddHTMLContentHeader_$pluginname";
