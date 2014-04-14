@@ -358,8 +358,9 @@
 @RobotsSearchIDOrder_list1 = (
 # By Japanese Edition
 'hatena',
-'naver',
-'bookmark',		  
+'hatenascreenshot',
+'bookmark',
+'fc2bots',
 # Common robots (In robot file)
 'appie',
 'architext',
@@ -1175,9 +1176,10 @@
 #-------------------------------------------------------
 %RobotsHashIDLib   = (
 # By Japanese Edition
-'hatena','Hatena Bookmark',
-'naver','NaverBot',
-'bookmark','Bookmark Renewal Check Agent',
+'hatena','<a href="http://b.hatena.ne.jp">Hatena Bookmark</a>',
+'hatenascreenshot','HatenaScreenshot',
+'bookmark','<a href="http://www.bookmark.ne.jp/">Bookmark Renewal Check Agent</a>',
+'fc2bots','<a href="http://fc2.com/">FC2</a>',
 # Common robots (In robot file)
 'appie','<a href="http://www.walhello.com/" title="Bot home page [new window]" target="_blank">Walhello appie</a>',
 'architext','ArchitextSpider',
