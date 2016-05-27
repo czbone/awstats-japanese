@@ -9975,6 +9975,16 @@ sub HTMLTopBanner{
 "<tr><td class=\"aws\" valign=\"middle\"><b>$Message[133]:</b></td>";
 		print "<td class=\"aws\" valign=\"middle\">";
 		if ( $ENV{'GATEWAY_INTERFACE'} || !$StaticLinks ) {
+			print "<select class=\"aws_formfield\" name=\"year\">\n";
+
+			# Add YearRequired in list if not in ListOfYears
+			$ListOfYears{$YearRequired} ||= $MonthRequired;
+			foreach ( sort keys %ListOfYears ) {
+				print "<option"
+				  . ( $YearRequired eq "$_" ? " selected=\"selected\"" : "" )
+				  . " value=\"$_\">$_</option>\n";
+			}
+			print "</select>\n";
 			print "<select class=\"aws_formfield\" name=\"month\">\n";
 			foreach ( 1 .. 12 ) {
 				my $monthix = sprintf( "%02s", $_ );
@@ -9990,16 +10000,6 @@ sub HTMLTopBanner{
 				print "<option"
 				  . ( $MonthRequired eq 'all' ? " selected=\"selected\"" : "" )
 				  . " value=\"all\">- $Message[6] -</option>\n";
-			}
-			print "</select>\n";
-			print "<select class=\"aws_formfield\" name=\"year\">\n";
-
-			# Add YearRequired in list if not in ListOfYears
-			$ListOfYears{$YearRequired} ||= $MonthRequired;
-			foreach ( sort keys %ListOfYears ) {
-				print "<option"
-				  . ( $YearRequired eq "$_" ? " selected=\"selected\"" : "" )
-				  . " value=\"$_\">$_</option>\n";
 			}
 			print "</select>\n";
 			print "<input type=\"hidden\" name=\"output\" value=\""
@@ -10032,11 +10032,14 @@ sub HTMLTopBanner{
 			print "<span style=\"font-size: 14px;\">";
 			if ($DayRequired) { print "$Message[4] $DayRequired - "; }
 			if ( $MonthRequired eq 'all' ) {
-				print "$Message[6] $YearRequired";
+				# Modified for Japanese order
+				#print "$Message[6] $YearRequired";
+				print "$YearRequired$Message[6]";
 			}
 			else {
-				print
-				  "$Message[5] $MonthNumLib{$MonthRequired} $YearRequired";
+				# Modified for Japanese order
+				#print "$Message[5] $MonthNumLib{$MonthRequired} $YearRequired";
+				print "$YearRequired$Message[6] ".$MonthNumLib{$MonthRequired};
 			}
 			print "</span>";
 		}
@@ -12951,10 +12954,12 @@ sub HTMLMainSummary{
 "<td class=\"aws\"><b>$Message[133]</b></td><td class=\"aws\" colspan=\""
 	  . ( $colspan - 1 ) . "\">\n";
 	print( $MonthRequired eq 'all'
-		? "$Message[6] $YearRequired"
-		: "$Message[5] "
-		  . $MonthNumLib{$MonthRequired}
-		  . " $YearRequired"
+		# modified for Japanese order
+		? "$YearRequired$Message[6]" : "$YearRequired$Message[6] $MonthNumLib{$MonthRequired}"
+#		? "$Message[6] $YearRequired"
+#		: "$Message[5] "
+#		  . $MonthNumLib{$MonthRequired}
+#		  . " $YearRequired"
 	);
 	print "</td></tr>\n";
 	print "<tr bgcolor=\"#$color_TableBGRowTitle\">";
@@ -13357,7 +13362,9 @@ sub HTMLMainMonthly{
 				? '<span class="currentday">'
 				: ''
 			  );
-			print "$MonthNumLib{$monthix}<br />$YearRequired";
+			# modified for Japanese order
+			#print "$MonthNumLib{$monthix}<br />$YearRequired";
+			print "$YearRequired$Message[6]<br />$MonthNumLib{$monthix}";
 			print(   !$StaticLinks
 				  && $monthix == $nowmonth
 				  && $YearRequired == $nowyear ? '</span>' : '' );
@@ -13420,7 +13427,9 @@ sub HTMLMainMonthly{
 				? '<span class="currentday">'
 				: ''
 			  );
-			print "$MonthNumLib{$monthix} $YearRequired";
+			# modified for Japanese order
+			#print "$MonthNumLib{$monthix} $YearRequired";
+			print "$YearRequired$Message[6] $MonthNumLib{$monthix}";
 			print(   !$StaticLinks
 				  && $monthix == $nowmonth
 				  && $YearRequired == $nowyear ? '</span>' : '' );
