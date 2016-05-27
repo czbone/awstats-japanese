@@ -207,6 +207,40 @@
 # Note: Regex IDs are in lower case and ' ' and '+' are changed into '_'
 #------------------------------------------------------------------------------
 @SearchEnginesSearchIDOrder_list1=(
+# Japanese Search Engines
+'google\.co\.jp',
+'66\.249\.(89\.99|93\.104)',
+'66\.102\.(7\.99|7\.104|9\.104|11\.104)',
+'64\.233\.(161\.104|179\.104|167\.104|183\.104|187\.104)',
+'72\.14\.(203|205|207|209|221|235|253)\.104',
+'216\.239\.(37\.104|39\.104|41\.104|51\.104|57\.104|59\.104)',
+'search\.biglobe\.ne\.jp',
+'goo\.ne\.jp',
+'nifty\.com',
+'search\.msn\.co\.jp',
+'search\.odn\.ne\.jp',
+'excite\.ne\.jp',
+'naver\.co\.jp',
+'fresheye\.com',
+'tocc\.co\.jp',
+'infoseek\.co\.jp',
+'cache\.yahoofs\.jp',
+'search\.livedoor\.com',
+'www\.ceek\.jp',
+'www\.bing\.com',
+'s\.luna\.tv',
+'72\.14\.207\.99',
+'209\.85\.165\.104',
+'209\.85\.129\.104',
+'209\.85\.129\.132',
+'209\.85\.(173|175)\.104',
+'74\.125\.47\.132',
+'74\.125\.77\.132',
+'74\.125\.95\.132',
+'74\.125\.153\.132',
+'74\.125\.155\.132',
+'72\.14\.235\.132',
+'66\.249\.89\.104',
 # Major international search engines
 'google\.[\w.]+/products',
 'base\.google\.',
@@ -511,6 +545,10 @@
 # really a search engine
 #------------------------------------------------------------------------------
 %NotSearchEnginesKeys=(
+# Japanese Search Engines
+'infoseek\.co\.jp'=>'at\.infoseek\.co\.jp',
+'goo\.ne\.jp'=>'members\.goo\.ne\.jp',
+# Major Search Engine
 'altavista\.'=>'babelfish\.altavista\.',
 'google\.'=>'mail\.google\.',
 'google\.'=>'translate\.google\.',
@@ -527,6 +565,40 @@
 # Each Search Engine Search ID is associated to an AWStats id string
 #------------------------------------------------------------------------------
 %SearchEnginesHashID = (
+# Japanese Search Engines
+'google\.co\.jp','googlejapan',
+'66\.249\.(89\.99|93\.104)','googlejapan',
+'66\.102\.(7\.99|7\.104|9\.104|11\.104)','googlejapan',
+'64\.233\.(161\.104|179\.104|167\.104|183\.104|187\.104)','googlejapan',
+'72\.14\.(203|205|207|209|221|235|253)\.104','googlejapan',
+'216\.239\.(37\.104|39\.104|41\.104|51\.104|57\.104|59\.104)','googlejapan',
+'search\.biglobe\.ne\.jp','biglobe',
+'goo\.ne\.jp','goo',
+'nifty\.com','nifty',
+'search\.msn\.co\.jp','msnjapan',
+'search\.odn\.ne\.jp','odn',
+'excite\.co\.jp','excitejapan',
+'naver\.co\.jp','naver',
+'fresheye\.com','fresheye',
+'tocc\.co\.jp','tocc',
+'infoseek\.co\.jp','infoseek',
+'cache\.yahoofs\.jp','yahoocache',
+'search\.livedoor\.com','livedoor',
+'www\.ceek\.jp','ceek',
+'www\.bing\.com','bing',
+'s\.luna\.tv','lunascape',
+'72\.14\.207\.99','googlejapan',
+'209\.85\.165\.104','googlejapan',
+'209\.85\.129\.104','googlejapan',
+'209\.85\.129\.132','googlejapan',
+'209\.85\.(173|175)\.104','googlejapan',
+'74\.125\.47\.132','googlejapan',
+'74\.125\.77\.132','googlejapan',
+'74\.125\.95\.132','googlejapan',
+'74\.125\.153\.132','googlejapan',
+'74\.125\.155\.132','googlejapan',
+'72\.14\.235\.132','googlejapan',
+'66\.249\.89\.104','googlejapan',
 # Major international search engines
 'google\.[\w.]+/products','google_products',
 'base\.google\.','google_base',
@@ -911,6 +983,22 @@
 # Known rules to extract keywords from a referrer search engine URL
 #------------------------------------------------------------------------------
 %SearchEnginesKnownUrl=(
+# Japanese Search Engines
+'googlejapan','(p|q)=',
+'biglobe','q=',
+'goo','MT=',
+'nifty','Text=',
+'msnjapan','(q|MT)=',
+'odn','Querystring=',
+'excitejapan','search=',
+'naver','query=',
+'fresheye','kw=',
+'tocc','QRY=',
+'infoseek','qt=',
+'yahoocache','w=',
+'livedoor','q=',
+'ceek','q=',
+'clusty','query=',
 # Most common search engines
 'alexa','q=',
 'alltheweb','q(|uery)=',
@@ -1218,7 +1306,9 @@
 
 # If no rules are known, we take first paramater not into WordsToCleanSearchUrl
 #------------------------------------------------------------------------------
-@WordsToCleanSearchUrl= ('act=','annuaire=','btng=','cat=','categoria=','cfg=','cof=','cou=','count=','cp=','dd=','domain=','dt=','dw=','enc=','exec=','geo=','hc=','height=','hits=','hl=','hq=','hs=','id=','kl=','lang=','loc=','lr=','matchmode=','medor=','message=','meta=','mode=','order=','page=','par=','pays=','pg=','pos=','prg=','qc=','refer=','sa=','safe=','sc=','sort=','src=','start=','style=','stype=','sum=','tag=','temp=','theme=','type=','url=','user=','width=','what=','\\.x=','\\.y=','y=','look=');
+@WordsToCleanSearchUrl= ('act=','annuaire=','btng=','cat=','categoria=','cfg=','cof=','cou=','count=','cp=','dd=','domain=','dt=','dw=','enc=','exec=','geo=','hc=','height=','hits=','hl=','hq=','hs=','id=','kl=','lang=','loc=','lr=','matchmode=','medor=','message=','meta=','mode=','order=','page=','par=','pays=','pg=','pos=','prg=','qc=','refer=','sa=','safe=','sc=','sort=','src=','start=','style=','stype=','sum=','tag=','temp=','theme=','type=','url=','user=','width=','what=','\\.x=','\\.y=','y=','look=',
+# Japanese Search Engines
+'target=','collection=','showSummary=','perPage=','next=','DB=','OPE=','Max=','base=','submit=','SearchType=','SESSIONID=','QUERYRULE=','DISPLAYMIN=','RELURLSWITCH=','SORT=','start=','direct=','relwd=','lk=','svx=','nh=','internet=','DC=','submit0=','DEST=','where=','CCM=','NRS=','UNI=','UD0=','FRS=','sv=','rf=','oq=','col=','act\.search=');
 
 # SearchEnginesKnownUTFCoding
 # Known parameter that proves a search engine has coded its parameters in UTF-8
@@ -1235,6 +1325,23 @@
 # 'search_engine_id', 'search_engine_name',
 #------------------------------------------------------------------------------
 %SearchEnginesHashLib=(
+# Japanese Search Engines
+'googlejapan','Google Japan',
+'biglobe','Biglobe',
+'goo','Goo',
+'nifty','Nifty',
+'msnjapan','MSN Japan',
+'odn','ODN',
+'excitejapan','Excite Japan',
+'naver','Naver',
+'fresheye','Fresheye',
+'tocc','TOCC/Search',
+'infoseek','Infoseek',
+'yahoocache','Yahoo Cache',
+'livedoor','Livedoor',
+'ceek','CEEK.JP',
+'bing','Bing',
+'lunascape','Lunascape',
 # Major international search engines
 'alexa','<a href="http://www.alexa.com/" rel="nofollow" title="Search Engine Home Page [new window]" target="_blank">Alexa</a>',
 'alltheweb','<a href="http://www.alltheweb.com/" rel="nofollow" title="Search Engine Home Page [new window]" target="_blank">AllTheWeb</a>',
